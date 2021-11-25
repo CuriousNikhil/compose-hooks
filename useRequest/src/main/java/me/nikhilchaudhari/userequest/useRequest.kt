@@ -47,22 +47,7 @@ fun delete(
     stream: Boolean = false,
     files: List<RawFiles> = listOf(),
     sslContext: SSLContext? = null
-): Response {
-    return request(
-        "DELETE",
-        url,
-        headers,
-        params,
-        auth,
-        data,
-        json,
-        timeout,
-        allowRedirects,
-        stream,
-        files,
-        sslContext
-    )
-}
+) = request("DELETE", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext)
 
 fun get(
     url: String,
@@ -76,9 +61,7 @@ fun get(
     stream: Boolean = false,
     files: List<RawFiles> = listOf(),
     sslContext: SSLContext? = null
-): Response {
-    return request("GET", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext)
-}
+) = request("GET", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext)
 
 fun head(
     url: String,
@@ -92,9 +75,7 @@ fun head(
     stream: Boolean = false,
     files: List<RawFiles> = listOf(),
     sslContext: SSLContext? = null
-): Response {
-    return request("HEAD", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext)
-}
+) = request("HEAD", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext)
 
 fun options(
     url: String,
@@ -108,22 +89,7 @@ fun options(
     stream: Boolean = false,
     files: List<RawFiles> = listOf(),
     sslContext: SSLContext? = null
-): Response {
-    return request(
-        "OPTIONS",
-        url,
-        headers,
-        params,
-        auth,
-        data,
-        json,
-        timeout,
-        allowRedirects,
-        stream,
-        files,
-        sslContext
-    )
-}
+) = request("OPTIONS", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext)
 
 fun patch(
     url: String,
@@ -137,9 +103,7 @@ fun patch(
     stream: Boolean = false,
     files: List<RawFiles> = listOf(),
     sslContext: SSLContext? = null
-): Response {
-    return request("PATCH", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext)
-}
+) = request("PATCH", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext)
 
 fun post(
     url: String,
@@ -153,9 +117,7 @@ fun post(
     stream: Boolean = false,
     files: List<RawFiles> = listOf(),
     sslContext: SSLContext? = null
-): Response {
-    return request("POST", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext)
-}
+) = request("POST", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext)
 
 fun put(
     url: String,
@@ -169,9 +131,7 @@ fun put(
     stream: Boolean = false,
     files: List<RawFiles> = listOf(),
     sslContext: SSLContext? = null
-): Response {
-    return request("PUT", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext)
-}
+) = request("PUT", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext)
 
 fun request(
     method: String,
@@ -189,8 +149,7 @@ fun request(
 ): Response {
     return ResponseImpl(
         RequestImpl(
-            method, url, params, headers, auth, data,
-            json, timeout, allowRedirects, stream, files, sslContext
+            method, url, params, headers, auth, data, json, timeout, allowRedirects, stream, files, sslContext
         )
     ).run {
         this.init()
