@@ -31,7 +31,22 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Text(text = "Hello $name!")
+
+    val resultState = useRequest { get("https://reqres.in/api/users") }
+
+    val text: String? = when (val data = resultState.value) {
+
+        is Result.Error -> {
+            data.error?.toString()
+        }
+        is Result.Success -> {
+            data.data.text
+        }
+        is Result.Loading -> {
+            "Loading..."
+        }
+    }
+    Text(text = "Hello $text!")
 }
 
 @Preview(showBackground = true)
