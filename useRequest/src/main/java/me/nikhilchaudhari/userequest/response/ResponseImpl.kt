@@ -21,6 +21,11 @@ import java.util.zip.GZIPInputStream
 import java.util.zip.InflaterInputStream
 import javax.net.ssl.HttpsURLConnection
 
+/**
+ * Response implementation details
+ * This class takes a [Request] and opens an [HttpURLConnection] on that [URL]
+ * and returns a [Response] object
+ */
 class ResponseImpl internal constructor(override val request: Request) : Response {
 
     override fun contentIterator(chunkSize: Int): Iterator<ByteArray> {
@@ -231,10 +236,7 @@ class ResponseImpl internal constructor(override val request: Request) : Respons
                 this._connection = URL(this.request.url).openRedirectingConnection(
                     this._history.firstOrNull() ?: this.apply { this._history.add(this) }
                 ) {
-                    (
-                        defaultStartInitializers + this@ResponseImpl.initializers +
-                            defaultEndInitializers
-                        ).forEach {
+                    (defaultStartInitializers + this@ResponseImpl.initializers + defaultEndInitializers).forEach {
                         it(this@ResponseImpl, this)
                     }
                 }

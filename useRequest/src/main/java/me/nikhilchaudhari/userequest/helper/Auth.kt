@@ -28,7 +28,12 @@ fun ByteArray.encodeBase64(): ByteArray {
     return output.toByteArray()
 }
 
-class BaseAuth(private val user: String, private val password: String) : Auth {
+/**
+ * Class represents basic authorization to be passed on to the network request
+ *
+ * Pass [user] and [password] and create [BaseAuth] type
+ */
+data class BaseAuth(private val user: String, private val password: String) : Auth {
     override val header: Pair<String, String>
         get() {
             val b64 = "${this.user}:${this.password}".encodeBase64ToString()
@@ -36,6 +41,9 @@ class BaseAuth(private val user: String, private val password: String) : Auth {
         }
 }
 
+/**
+ * Authorization contract to implement your own custom authorization
+ */
 interface Auth {
     val header: Pair<String, String>
 }

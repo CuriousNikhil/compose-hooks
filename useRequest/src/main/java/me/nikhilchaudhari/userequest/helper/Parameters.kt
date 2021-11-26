@@ -2,6 +2,9 @@ package me.nikhilchaudhari.userequest.helper
 
 import java.net.URLEncoder
 
+/*
+ * This class represents Parameters and encodes them into URL
+ */
 class Parameters(private vararg val parameters: Pair<String, String>) : Map<String, String> by mapOf(*parameters) {
 
     constructor(parameters: Map<String, String>) : this(*parameters.toList().toTypedArray())

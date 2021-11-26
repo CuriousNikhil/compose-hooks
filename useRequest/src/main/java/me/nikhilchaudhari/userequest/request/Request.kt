@@ -4,6 +4,9 @@ import me.nikhilchaudhari.userequest.helper.Auth
 import me.nikhilchaudhari.userequest.helper.RawFiles
 import javax.net.ssl.SSLContext
 
+/**
+ * Request interface representing simple network request
+ */
 interface Request {
 
     val method: String

@@ -20,6 +20,11 @@ import java.net.URLDecoder
 import java.util.UUID
 import javax.net.ssl.SSLContext
 
+/**
+ * Request implementation
+ *
+ * This class take all the network request params and constructs a [URL]
+ */
 class RequestImpl internal constructor(
     override val method: String,
     url: String,
