@@ -47,4 +47,17 @@ Checkout the API docs [here](https://javadoc.io/doc/me.nikhilchaudhari/usereques
 Documentation is in progress 🧰 🪛 👷‍♂️
 ~~~
 
+## Response as a state
+
+When you use `userRequest { get("<url>") }`, it returns you `State<Result>` object. The `Result` has three values `Error(error: Throwable?)`, `Success(data: Response)` and `Loading` and these are the three states we usually use while doing a long running task/network call. 
+
+You get the `Response` object in the `Success` state which you can use to process. You can use `Moshi`, `GSON` or any other JSON adapters libraries.
+
+Internally, the network request is performed in flow on IO dispatcher and result is collected as state. This uses `produceState(..)` side-effect which is provided by the compose runtime itself. You can create many such side-effects (in react terminologies, it's called as hooks).
+
+Hop over to Wiki page for the complete documenation
+
+
+### License
+
 [LICENSE Apache 2.0](https://github.com/CuriousNikhil/compose-useRequest/blob/main/LICENSE)
