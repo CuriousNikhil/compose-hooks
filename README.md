@@ -9,7 +9,7 @@ Inspired from react-hooks
 1. Add the following dependency in your `build.gradle`
 
 ```kotlin
-implementation("me.nikhilchaudhari:useRequest:1.0.0-alpha01")
+implementation("me.nikhilchaudhari:userequest:1.0.0-alpha01")
 ```
 
 2. And use in your regular compose functions
