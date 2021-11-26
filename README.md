@@ -43,3 +43,8 @@ fun Greeting() {
 
 Checkout the API docs [here](https://javadoc.io/doc/me.nikhilchaudhari/userequest/latest/me/nikhilchaudhari/userequest/UseRequestKt.html) 
 
+~~~ Note
+Documentation is in progress 🧰 🪛 👷‍♂️
+~~~
+
+[LICENSE Apache 2.0](https://github.com/CuriousNikhil/compose-useRequest/blob/main/LICENSE)
