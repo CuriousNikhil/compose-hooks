@@ -1,6 +1,6 @@
-package me.nikhilchaudhari.userequest.response
+package me.nikhilchaudhari.usehttp.response
 
-import me.nikhilchaudhari.userequest.request.Request
+import me.nikhilchaudhari.usehttp.request.Request
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.InputStream
@@ -23,7 +23,7 @@ import java.nio.charset.Charset
  * @property history - List of responses of number of requests
  * @property connection - [HttpURLConnection]
  */
-interface Response {
+interface ResponseData {
 
     val request: Request
 
@@ -44,7 +44,7 @@ interface Response {
 
     var encoding: Charset
 
-    val history: List<Response>
+    val history: List<ResponseData>
 
     val connection: HttpURLConnection
 

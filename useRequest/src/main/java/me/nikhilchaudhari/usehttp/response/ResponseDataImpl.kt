@@ -1,11 +1,11 @@
-package me.nikhilchaudhari.userequest.response
+package me.nikhilchaudhari.usehttp.response
 
-import me.nikhilchaudhari.userequest.helper.CaseInsensitiveMap
-import me.nikhilchaudhari.userequest.helper.getSuperclasses
-import me.nikhilchaudhari.userequest.helper.split
-import me.nikhilchaudhari.userequest.helper.splitLines
-import me.nikhilchaudhari.userequest.request.Request
-import me.nikhilchaudhari.userequest.request.RequestImpl
+import me.nikhilchaudhari.usehttp.helper.CaseInsensitiveMap
+import me.nikhilchaudhari.usehttp.helper.getSuperclasses
+import me.nikhilchaudhari.usehttp.helper.split
+import me.nikhilchaudhari.usehttp.helper.splitLines
+import me.nikhilchaudhari.usehttp.request.Request
+import me.nikhilchaudhari.usehttp.request.RequestImpl
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
@@ -24,14 +24,14 @@ import javax.net.ssl.HttpsURLConnection
 /**
  * Response implementation details
  * This class takes a [Request] and opens an [HttpURLConnection] on that [URL]
- * and returns a [Response] object
+ * and returns a [ResponseData] object
  */
-class ResponseImpl internal constructor(override val request: Request) : Response {
+class ResponseDataImpl internal constructor(override val request: Request) : ResponseData {
 
     override fun contentIterator(chunkSize: Int): Iterator<ByteArray> {
         return object : Iterator<ByteArray> {
             var readBytes: ByteArray = ByteArray(0)
-            val stream = if (this@ResponseImpl.request.stream) this@ResponseImpl.raw else this@ResponseImpl.content.inputStream()
+            val stream = if (this@ResponseDataImpl.request.stream) this@ResponseDataImpl.raw else this@ResponseDataImpl.content.inputStream()
 
             override fun next(): ByteArray {
                 val bytes = readBytes
@@ -52,17 +52,17 @@ class ResponseImpl internal constructor(override val request: Request) : Respons
 
             override fun hasNext(): Boolean {
                 return try {
-                    val mark = this@ResponseImpl.raw.markSupported()
+                    val mark = this@ResponseDataImpl.raw.markSupported()
                     if (mark) {
-                        this@ResponseImpl.raw.mark(1)
+                        this@ResponseDataImpl.raw.mark(1)
                     }
-                    val read = this@ResponseImpl.raw.read()
+                    val read = this@ResponseDataImpl.raw.read()
                     if (read == -1) {
                         stream.close()
                         false
                     } else {
                         if (mark) {
-                            this@ResponseImpl.raw.reset()
+                            this@ResponseDataImpl.raw.reset()
                         } else {
                             readBytes += ByteArray(1).apply { this[0] = read.toByte() }
                         }
@@ -77,7 +77,7 @@ class ResponseImpl internal constructor(override val request: Request) : Respons
 
     override fun lineIterator(chunkSize: Int, delimiter: ByteArray?): Iterator<ByteArray> {
         return object : Iterator<ByteArray> {
-            val byteArrays = this@ResponseImpl.contentIterator(chunkSize)
+            val byteArrays = this@ResponseDataImpl.contentIterator(chunkSize)
             var leftOver: ByteArray? = null
             val overflow = arrayListOf<ByteArray>()
 
@@ -131,7 +131,7 @@ class ResponseImpl internal constructor(override val request: Request) : Respons
             check(this.requestMethod == method)
         }
 
-        internal val defaultStartInitializers: MutableList<(ResponseImpl, HttpURLConnection) -> Unit> =
+        internal val defaultStartInitializers: MutableList<(ResponseDataImpl, HttpURLConnection) -> Unit> =
             arrayListOf(
                 { response, connection ->
                     connection.forceMethod(response.request.method)
@@ -158,7 +158,7 @@ class ResponseImpl internal constructor(override val request: Request) : Respons
                 }
             )
 
-        internal val defaultEndInitializers: MutableList<(ResponseImpl, HttpURLConnection)
+        internal val defaultEndInitializers: MutableList<(ResponseDataImpl, HttpURLConnection)
             -> Unit> = arrayListOf(
             { response, connection ->
                 val body = response.request.body
@@ -188,7 +188,7 @@ class ResponseImpl internal constructor(override val request: Request) : Respons
     }
 
     private fun URL.openRedirectingConnection(
-        first: Response,
+        first: ResponseData,
         receiver: HttpURLConnection.() -> Unit
     ): HttpURLConnection {
         val connection = (this.openConnection() as HttpURLConnection).apply {
@@ -200,7 +200,7 @@ class ResponseImpl internal constructor(override val request: Request) : Respons
             connection.responseCode in arrayOf(301, 302, 303, 307, 308)
         ) {
             val req = with(first.request) {
-                ResponseImpl(
+                ResponseDataImpl(
                     RequestImpl(
                         method = this.method,
                         url = this@openRedirectingConnection.toURI()
@@ -219,14 +219,14 @@ class ResponseImpl internal constructor(override val request: Request) : Respons
                 )
             }
             req._history.addAll(first.history)
-            (first as ResponseImpl)._history.add(req)
+            (first as ResponseDataImpl)._history.add(req)
             req.init()
         }
         return connection
     }
 
-    internal var _history: MutableList<Response> = arrayListOf()
-    override val history: List<Response>
+    internal var _history: MutableList<ResponseData> = arrayListOf()
+    override val history: List<ResponseData>
         get() = Collections.unmodifiableList(this._history)
 
     private var _connection: HttpURLConnection? = null
@@ -236,8 +236,8 @@ class ResponseImpl internal constructor(override val request: Request) : Respons
                 this._connection = URL(this.request.url).openRedirectingConnection(
                     this._history.firstOrNull() ?: this.apply { this._history.add(this) }
                 ) {
-                    (defaultStartInitializers + this@ResponseImpl.initializers + defaultEndInitializers).forEach {
-                        it(this@ResponseImpl, this)
+                    (defaultStartInitializers + this@ResponseDataImpl.initializers + defaultEndInitializers).forEach {
+                        it(this@ResponseDataImpl, this)
                     }
                 }
             }
@@ -273,7 +273,7 @@ class ResponseImpl internal constructor(override val request: Request) : Respons
             } catch (ex: IOException) {
                 this.errorStream
             }
-            return when (this@ResponseImpl.headers["Content-Encoding"]?.toLowerCase()) {
+            return when (this@ResponseDataImpl.headers["Content-Encoding"]?.toLowerCase()) {
                 "gzip" -> GZIPInputStream(stream)
                 "deflate" -> InflaterInputStream(stream)
                 else -> stream
@@ -337,7 +337,7 @@ class ResponseImpl internal constructor(override val request: Request) : Respons
         }
 
     // Initializers
-    val initializers: MutableList<(ResponseImpl, HttpURLConnection) -> Unit> = arrayListOf()
+    val initializers: MutableList<(ResponseDataImpl, HttpURLConnection) -> Unit> = arrayListOf()
 
     override fun toString(): String {
         return "<Response [${this.statusCode}]>"
