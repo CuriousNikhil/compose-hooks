@@ -1,4 +1,4 @@
-package me.nikhilchaudhari.userequest.helper
+package me.nikhilchaudhari.usehttp.helper
 
 class CaseInsensitiveMap<out V>(private val map: Map<String, V>) : Map<String, V> by map {
 

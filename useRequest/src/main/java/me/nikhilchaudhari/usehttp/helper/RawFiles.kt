@@ -1,4 +1,4 @@
-package me.nikhilchaudhari.userequest.helper
+package me.nikhilchaudhari.usehttp.helper
 
 import java.io.File
 import java.nio.file.Path

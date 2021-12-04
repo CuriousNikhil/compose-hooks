@@ -1,4 +1,4 @@
-package me.nikhilchaudhari.userequest.helper
+package me.nikhilchaudhari.usehttp.helper
 
 import java.net.URLEncoder
 
