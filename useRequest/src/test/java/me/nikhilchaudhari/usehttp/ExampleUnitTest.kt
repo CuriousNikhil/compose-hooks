@@ -1,4 +1,4 @@
-package me.nikhilchaudhari.userequest
+package me.nikhilchaudhari.usehttp
 
 import org.junit.Assert.assertEquals
 import org.junit.Test
