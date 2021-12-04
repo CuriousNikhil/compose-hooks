@@ -1,11 +1,11 @@
-package me.nikhilchaudhari.userequest.request
+package me.nikhilchaudhari.usehttp.request
 
-import me.nikhilchaudhari.userequest.helper.Auth
-import me.nikhilchaudhari.userequest.helper.CaseInsensitiveMutableMap
-import me.nikhilchaudhari.userequest.helper.Parameters
-import me.nikhilchaudhari.userequest.helper.RawFiles
-import me.nikhilchaudhari.userequest.helper.putAllIfAbsentWithNull
-import me.nikhilchaudhari.userequest.helper.writeAndFlush
+import me.nikhilchaudhari.usehttp.helper.Auth
+import me.nikhilchaudhari.usehttp.helper.CaseInsensitiveMutableMap
+import me.nikhilchaudhari.usehttp.helper.Parameters
+import me.nikhilchaudhari.usehttp.helper.RawFiles
+import me.nikhilchaudhari.usehttp.helper.putAllIfAbsentWithNull
+import me.nikhilchaudhari.usehttp.helper.writeAndFlush
 import org.json.JSONArray
 import org.json.JSONObject
 import org.json.JSONStringer

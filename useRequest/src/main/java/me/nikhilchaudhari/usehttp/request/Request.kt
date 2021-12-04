@@ -1,7 +1,7 @@
-package me.nikhilchaudhari.userequest.request
+package me.nikhilchaudhari.usehttp.request
 
-import me.nikhilchaudhari.userequest.helper.Auth
-import me.nikhilchaudhari.userequest.helper.RawFiles
+import me.nikhilchaudhari.usehttp.helper.Auth
+import me.nikhilchaudhari.usehttp.helper.RawFiles
 import javax.net.ssl.SSLContext
 
 /**
