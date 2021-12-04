@@ -40,25 +40,6 @@ sealed class Result {
 }
 
 /**
- * This composable lets you to create a single network request or a series of network requests and returns
- * the response as a [State] values. The state value changes with the network logic and you receive your appropriate result as [State].
- *
- * Example - <code> val resultState = useRequest { get("https://yourapi.com/things") } </code>
- * The `resultState` has three states as mentioned in the return type. You can consume [Result.Response.data] to get the [ResponseData] object.
- *
- *
- * @param [request] Lambda construct for passing the provided network request methods.
- * Following network requests are available - [get], [post], [put], [delete], [patch], [head]
- * @return [State] of [Result] - The [Result] has three values [Result.Loading], [Result.Response], [Result.Error] which are pretty straightforward and
- * you can consume these state values.
- */
-@Composable
-fun useRequest(request: () -> ResponseData): State<Result> =
-    produceState<Result>(initialValue = Result.Loading) {
-        value = makeRequest { request() }
-    }
-
-/**
  * Use GET network request
  * This composable lets you to create a GET network request and returns
  * the response as a [State] values. You receive your appropriate [Result] as [State].
