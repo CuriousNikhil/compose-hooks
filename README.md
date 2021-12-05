@@ -50,6 +50,25 @@ Checkout the API docs [here](https://javadoc.io/doc/me.nikhilchaudhari/compose-u
 Documentation is in progress 🧰 🪛 👷‍♂️
 ~~~
 
+## Methods available
+
+You can use the following composables to get the network response as a state value in your composables/compose functions
+
+[`useGet`]()
+
+[`usePut`]()
+
+[`usePost`]()
+
+[`useOptions`]()
+
+[`usePatch`]()
+
+[`useDelete`]()
+
+[`useHead`]()
+
+
 ## Response as a state
 
 When you use `useGet("<url>")`, it returns you `State<Result>` object. The `Result` has three values `Error(error: Throwable?)`, `Success(data: Response)` and `Loading` and these are the three states we usually use while doing a long running task/network call. 
