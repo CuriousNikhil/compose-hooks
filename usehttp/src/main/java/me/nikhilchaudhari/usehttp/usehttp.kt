@@ -1,5 +1,6 @@
 package me.nikhilchaudhari.usehttp
 
+import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.key
@@ -80,7 +81,7 @@ fun useGet(
     sslContext: SSLContext? = null
 ): State<Result> = produceState<Result>(
     initialValue = Result.Loading,
-    key(url, headers, params, auth, data, json) {}
+    listOf(url, headers, params, auth, data, json)
 ) {
     value = makeRequest { request("GET", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext) }
 }
@@ -126,7 +127,7 @@ fun useDelete(
     sslContext: SSLContext? = null
 ) = produceState<Result>(
     initialValue = Result.Loading,
-    key(url, headers, params, auth, data, json) {}
+    listOf(url, headers, params, auth, data, json)
 ) {
     value = makeRequest { request("DELETE", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext) }
 }
@@ -169,7 +170,7 @@ fun useHead(
     sslContext: SSLContext? = null
 ) = produceState<Result>(
     initialValue = Result.Loading,
-    key(url, headers, params, auth, data, json) {}
+    listOf(url, headers, params, auth, data, json)
 ) {
     value = makeRequest { request("HEAD", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext) }
 }
@@ -212,7 +213,7 @@ fun useOptions(
     sslContext: SSLContext? = null
 ) = produceState<Result>(
     initialValue = Result.Loading,
-    key(url, headers, params, auth, data, json) {}
+    listOf(url, headers, params, auth, data, json)
 ) {
     value = makeRequest { request("OPTIONS", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext) }
 }
@@ -254,7 +255,7 @@ fun usePatch(
     sslContext: SSLContext? = null
 ) = produceState<Result>(
     initialValue = Result.Loading,
-    key(url, headers, params, auth, data, json) {}
+    listOf(url, headers, params, auth, data, json)
 ) {
     value = makeRequest { request("PATCH", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext) }
 }
@@ -297,7 +298,7 @@ fun usePost(
     sslContext: SSLContext? = null
 ) = produceState<Result>(
     initialValue = Result.Loading,
-    key(url, headers, params, auth, data, json) {}
+    listOf(url, headers, params, auth, data, json)
 ) {
     value = makeRequest { request("POST", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext) }
 }
@@ -339,7 +340,7 @@ fun usePut(
     sslContext: SSLContext? = null
 ) = produceState<Result>(
     initialValue = Result.Loading,
-    key(url, headers, params, auth, data, json) {}
+    listOf(url, headers, params, auth, data, json)
 ) {
     value = makeRequest { request("PUT", url, headers, params, auth, data, json, timeout, allowRedirects, stream, files, sslContext) }
 }
