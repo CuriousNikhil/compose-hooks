@@ -53,30 +53,32 @@ fun Greeting() {
 
 You can use the following composables to get the network response as a state value in your composables/compose functions. Each of the provided methods contains all the necessary parameters that are required or can be passed over network request. You can check the following Apis - 
 
-[`useGet`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-get.html)
+[`useGet`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-get.html) for GET request
 
-[`usePost`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-post.html)
+[`usePost`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-post.html) for POST request
+ 
+[`usePut`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-put.html) for PUT request
 
-[`usePut`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-put.html)
+[`useOptions`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-options.html) for OPTIONS request
 
-[`useOptions`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-options.html)
+[`usePatch`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-patch.html) for PATCH request
 
-[`usePatch`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-patch.html)
+[`useDelete`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-delete.html) for DELETE request
 
-[`useDelete`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-delete.html)
-
-[`useHead`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-head.html)
+[`useHead`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-head.html) for HEAD request
 
 
 ### Response as a state
 
 When you use `useGet("<url>")`, it returns you `State<Result>` object. The [`Result`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/-result/index.html) has three values as follows - 
 
-[`Error(error: Throwable?)`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/-result/-error/index.html) 
+[`Error(error: Throwable?)`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/-result/-error/index.html) : An error state, when any error is thrown
 
-[`Response(data: ResponseData)`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/-result/-response/index.html)
+[`Response(data: ResponseData)`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/-result/-response/index.html) : A response state, a successful network request returning response
 
-[`Loading`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/-result/-loading/index.html) and these are the three states we usually use while doing a long running task/network call. 
+[`Loading`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/-result/-loading/index.html) : A loading state when request is ongoing
+
+And these are the three states we usually use while doing a long running task/network call. 
 
 You get the [`ResponseData`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp.response/-response-data/index.html) object in the `Response` state which you can use to process. You can use `Moshi`, `GSON` or any other JSON adapters libraries. Checkout the [sample app](https://github.com/CuriousNikhil/compose-usehttp/tree/main/app/src/main/java/me/nikhilchaudhari/usefetch) for how it's used.
 
