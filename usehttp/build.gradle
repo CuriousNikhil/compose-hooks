@@ -6,7 +6,7 @@ plugins {
 
 ext {
     PUBLISH_GROUP_ID = 'me.nikhilchaudhari'
-    PUBLISH_VERSION = '1.0.0-alpha1.1'
+    PUBLISH_VERSION = '1.0.0-alpha02'
     PUBLISH_ARTIFACT_ID = 'compose-usehttp'
 }
 
