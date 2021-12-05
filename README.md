@@ -82,7 +82,7 @@ And these are the three states we usually use while doing a long running task/ne
 
 You get the [`ResponseData`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp.response/-response-data/index.html) object in the `Response` state which you can use to process. You can use `Moshi`, `GSON` or any other JSON adapters libraries. Checkout the [sample app](https://github.com/CuriousNikhil/compose-usehttp/tree/main/app/src/main/java/me/nikhilchaudhari/usefetch) for how it's used.
 
-Internally, the network request is performed in flow on IO dispatcher and result is collected as state. This uses `produceState(..)` side-effect which is provided by the compose runtime itself. You can create many such side-effects by extending provided effects (in react terminologies, it's called as hooks).
+Internally, the network request is performed on IO dispatcher and result returned with the help of `produceState(..)` side-effect which is provided by the compose runtime itself. You can create many such side-effects by extending provided effects (in react terminologies, it's called as hooks).
 
 Hop over to Wiki page for the complete documenation.
 
