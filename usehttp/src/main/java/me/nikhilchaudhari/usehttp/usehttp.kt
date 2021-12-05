@@ -1,9 +1,7 @@
 package me.nikhilchaudhari.usehttp
 
-import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
-import androidx.compose.runtime.key
 import androidx.compose.runtime.produceState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -18,27 +16,6 @@ import javax.net.ssl.SSLContext
  * Default connection timeout
  */
 const val DEFAULT_TIMEOUT = 30.0
-
-/**
- * Result class represents the state value of your network
- */
-sealed class Result {
-    /**
-     * [Response] state contains [ResponseData] object of a network request
-     * [ResponseData] object has properties to access all your response contents
-     */
-    data class Response(val data: ResponseData) : Result()
-
-    /**
-     * [Error] state contains a [Throwable] object in case of any error
-     */
-    data class Error(val error: Throwable?) : Result()
-
-    /**
-     * [Loading] state means the network request is in progress
-     */
-    object Loading : Result()
-}
 
 /**
  * Use GET network request
