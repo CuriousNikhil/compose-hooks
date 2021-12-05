@@ -46,10 +46,6 @@ fun Greeting() {
 
 Checkout the API docs [here](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/latest/usehttp/me.nikhilchaudhari.usehttp/use-get.html) 
 
-~~~ Note
-Documentation is in progress 🧰 🪛 👷‍♂️
-~~~
-
 ## Methods available
 
 You can use the following composables to get the network response as a state value in your composables/compose functions
@@ -78,6 +74,15 @@ You get the `Response` object in the `Success` state which you can use to proces
 Internally, the network request is performed in flow on IO dispatcher and result is collected as state. This uses `produceState(..)` side-effect which is provided by the compose runtime itself. You can create many such side-effects (in react terminologies, it's called as hooks).
 
 Hop over to Wiki page for the complete documenation
+
+
+~~~ Note
+Documentation is in progress 🧰 🪛 👷‍♂️
+~~~
+
+## Contribution
+
+Please feel free to contribute if you think there are few modifications/changes/edits/improvements required. Thank you!
 
 
 ### License
