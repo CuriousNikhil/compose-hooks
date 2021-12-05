@@ -46,26 +46,28 @@ fun Greeting() {
 
 Checkout the API docs [here](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/latest/usehttp/me.nikhilchaudhari.usehttp/use-get.html) 
 
-## Methods available
+## Getting started
 
-You can use the following composables to get the network response as a state value in your composables/compose functions
+### Methods available
 
-[`useGet`]()
+You can use the following composables to get the network response as a state value in your composables/compose functions. Each of the provided methods contains all the necessary parameters that are required or can be passed over network request. You can check the following Apis - 
 
-[`usePut`]()
+[`useGet`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-get.html)
 
-[`usePost`]()
+[`usePost`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-post.html)
 
-[`useOptions`]()
+[`usePut`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-put.html)
 
-[`usePatch`]()
+[`useOptions`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-options.html)
 
-[`useDelete`]()
+[`usePatch`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-patch.html)
 
-[`useHead`]()
+[`useDelete`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-delete.html)
+
+[`useHead`](https://javadoc.io/doc/me.nikhilchaudhari/compose-usehttp/1.0.0-alpha1.1/usehttp/me.nikhilchaudhari.usehttp/use-head.html)
 
 
-## Response as a state
+### Response as a state
 
 When you use `useGet("<url>")`, it returns you `State<Result>` object. The `Result` has three values `Error(error: Throwable?)`, `Success(data: Response)` and `Loading` and these are the three states we usually use while doing a long running task/network call. 
 
