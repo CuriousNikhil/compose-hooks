@@ -9,7 +9,7 @@ Inspired from react-hooks [useFetch](https://use-http.com/#/)
 1. Add the following dependency in your `build.gradle`
 
 ```kotlin
-implementation("me.nikhilchaudhari:compose-usehttp:1.0.0-alpha02")
+implementation("me.nikhilchaudhari:compose-usehttp:{latest-release-version}")
 ```
 
 2. And use in your regular compose functions
