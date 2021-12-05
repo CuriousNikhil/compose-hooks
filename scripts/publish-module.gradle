@@ -29,9 +29,9 @@ tasks.withType(dokkaHtmlPartial.getClass()).configureEach {
     )
 }
 
-task javadocJar(type: Jar, dependsOn: dokkaJavadoc) {
+task javadocJar(type: Jar, dependsOn: dokkaHtml) {
     archiveClassifier.set('javadoc')
-    from dokkaJavadoc.outputDirectory
+    from dokkaHtml.outputDirectory
 }
 
 

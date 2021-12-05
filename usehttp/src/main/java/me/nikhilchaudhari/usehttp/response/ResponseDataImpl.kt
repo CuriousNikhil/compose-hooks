@@ -36,14 +36,18 @@ class ResponseDataImpl internal constructor(override val request: Request) : Res
             override fun next(): ByteArray {
                 val bytes = readBytes
                 val readSize = Math.min(chunkSize, bytes.size + stream.available())
-                val left = if (bytes.size > readSize) {
-                    return bytes.asList().subList(0, readSize).toByteArray().apply {
-                        readBytes = bytes.asList().subList(readSize, bytes.size).toByteArray()
+                val left = when {
+                    bytes.size > readSize -> {
+                        return bytes.asList().subList(0, readSize).toByteArray().apply {
+                            readBytes = bytes.asList().subList(readSize, bytes.size).toByteArray()
+                        }
                     }
-                } else if (bytes.isNotEmpty()) {
-                    readSize - bytes.size
-                } else {
-                    readSize
+                    bytes.isNotEmpty() -> {
+                        readSize - bytes.size
+                    }
+                    else -> {
+                        readSize
+                    }
                 }
                 val array = ByteArray(left).apply { stream.read(this) }
                 readBytes = ByteArray(0)
@@ -122,9 +126,9 @@ class ResponseDataImpl internal constructor(override val request: Request) : Res
                 }
                 (this.javaClass.getSuperclasses() + this.javaClass).forEach {
                     try {
-                        it.getDeclaredField("method").apply { this.isAccessible = true }
-                            .set(this, method)
+                        it.getDeclaredField("method").apply { this.isAccessible = true }.set(this, method)
                     } catch (ex: NoSuchFieldException) {
+                        // no op
                     }
                 }
             }
