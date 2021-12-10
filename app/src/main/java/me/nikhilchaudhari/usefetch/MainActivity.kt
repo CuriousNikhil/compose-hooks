@@ -27,8 +27,6 @@ import com.squareup.moshi.Moshi
 import me.nikhilchaudhari.usefetch.model.User
 import me.nikhilchaudhari.usefetch.model.UsersList
 import me.nikhilchaudhari.usefetch.ui.theme.UseFetchTheme
-import me.nikhilchaudhari.usehttp.Result
-import me.nikhilchaudhari.usehttp.useGet
 import kotlin.random.Random
 
 const val TAG = "nikhil"
@@ -55,7 +53,7 @@ fun NewUrlClick(onClick: () -> Unit) {
 fun UsersList() {
 
     var url = remember { mutableStateOf("https://reqres.in/api/users") }
-    var resultState = useGet(url.value)
+    var resultState = useFetch(url.value)
 
     when (val data = resultState.value) {
 
