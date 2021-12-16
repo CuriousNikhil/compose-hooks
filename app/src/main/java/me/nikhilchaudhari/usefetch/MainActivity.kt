@@ -61,7 +61,8 @@ fun UsersList() {
             Text(
                 modifier = Modifier
                     .size(24.dp)
-                    .fillMaxWidth(), text = "Error...${data.error}"
+                    .fillMaxWidth(),
+                text = "Error...${data.error}"
             )
         }
         is Result.Response -> {
@@ -88,12 +89,12 @@ fun UsersList() {
             Text(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .size(24.dp), text = "Loading..."
+                    .size(24.dp),
+                text = "Loading..."
             )
         }
     }
 }
-
 
 @Composable
 fun UserCard(user: User) {
@@ -110,7 +111,6 @@ fun UserCard(user: User) {
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable

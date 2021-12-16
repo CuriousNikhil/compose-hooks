@@ -3,9 +3,14 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 rootProject.name = "UseFetch"
-include ':app'
-include ':usefetch'
+
+val modules = listOf(
+    ":app",
+    ":usefetch",
+    ":useReducer"
+)
+
+include(*(modules.toTypedArray()))
