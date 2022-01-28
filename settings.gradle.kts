@@ -10,7 +10,8 @@ rootProject.name = "UseFetch"
 val modules = listOf(
     ":app",
     ":usefetch",
-    ":useReducer"
+    ":useReducer",
+    ":useNetworkState"
 )
 
 include(*(modules.toTypedArray()))

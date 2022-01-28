@@ -58,4 +58,6 @@ dependencies {
 
     // Modules
     implementation(project(":usefetch"))
+    implementation(project(":useReducer"))
+    implementation(project(":useNetworkState"))
 }

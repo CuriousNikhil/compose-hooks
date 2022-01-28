@@ -1,25 +1,19 @@
 package me.nikhilchaudhari.usefetch
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Button
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.squareup.moshi.JsonAdapter
@@ -27,6 +21,8 @@ import com.squareup.moshi.Moshi
 import me.nikhilchaudhari.usefetch.model.User
 import me.nikhilchaudhari.usefetch.model.UsersList
 import me.nikhilchaudhari.usefetch.ui.theme.UseFetchTheme
+import me.nikhilchaudhari.usenetworkstate.NetworkState
+import me.nikhilchaudhari.usenetworkstate.useNetworkState
 import kotlin.random.Random
 
 const val TAG = "nikhil"
@@ -38,7 +34,7 @@ class MainActivity : ComponentActivity() {
             UseFetchTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    UsersList()
+                    HomeScreen()
                 }
             }
         }
@@ -46,8 +42,16 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun NewUrlClick(onClick: () -> Unit) {
+fun HomeScreen() {
+    val networkState by useNetworkState(context = LocalContext.current)
+
+    if (networkState == NetworkState.Online) {
+        UsersList()
+    } else {
+        Text(text = "You are offline! Please turn on the network!")
+    }
 }
+
 
 @Composable
 fun UsersList() {
@@ -117,5 +121,18 @@ fun UserCard(user: User) {
 fun DefaultPreview() {
     UseFetchTheme {
         UsersList()
+    }
+}
+
+@Composable
+fun TestUseNetworkState() {
+    val networkState by useNetworkState(context = LocalContext.current)
+    when (networkState) {
+        NetworkState.Online -> {
+            Toast.makeText(LocalContext.current, "Online", Toast.LENGTH_LONG).show()
+        }
+        NetworkState.Offline -> {
+            Toast.makeText(LocalContext.current, "Offline", Toast.LENGTH_LONG).show()
+        }
     }
 }
