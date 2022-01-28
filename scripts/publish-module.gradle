@@ -62,13 +62,13 @@ afterEvaluate {
                 artifact javadocJar
 
                 pom {
-                    name = 'Compose-useRequest'
-                    description = 'A state based minimal http client for Jetpack Compose'
-                    url = 'https://github.com/CuriousNikhil/compose-useRequest'
+                    name = 'compose-hooks'
+                    description = 'Simple handy hooks for Jetpack Compose'
+                    url = 'https://github.com/CuriousNikhil/compose-hooks'
                     licenses {
                         license {
                             name = 'Apache License, Version 2.0'
-                            url = 'https://github.com/CuriousNikhil/compose-useRequest/blob/main/LICENSE'
+                            url = 'https://github.com/CuriousNikhil/compose-hooks/blob/main/LICENSE'
                         }
                     }
                     developers {
@@ -79,9 +79,9 @@ afterEvaluate {
                         }
                     }
                     scm {
-                        connection = 'scm:git:git://github.com/CuriousNikhil/compose-useRequest.git'
-                        developerConnection = 'scm:git:ssh://github.com/CuriousNikhil/compose-useRequest.git'
-                        url = 'https://github.com/CuriousNikhil/compose-useRequest'
+                        connection = 'scm:git:git://github.com/CuriousNikhil/compose-hooks.git'
+                        developerConnection = 'scm:git:ssh://github.com/CuriousNikhil/compose-hooks.git'
+                        url = 'https://github.com/CuriousNikhil/compose-hooks'
                     }
                 }
             }
