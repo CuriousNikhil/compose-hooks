@@ -11,7 +11,8 @@ val modules = listOf(
     ":app",
     ":usefetch",
     ":useReducer",
-    ":useNetworkState"
+    ":useNetworkState",
+    ":compose-hook-template"
 )
 
 include(*(modules.toTypedArray()))
