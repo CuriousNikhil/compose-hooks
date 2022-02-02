@@ -43,7 +43,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun HomeScreen() {
-    val networkState by useNetworkState(context = LocalContext.current)
+    val networkState by useNetworkState()
 
     if (networkState == NetworkState.Online) {
         UsersList()
@@ -126,7 +126,7 @@ fun DefaultPreview() {
 
 @Composable
 fun TestUseNetworkState() {
-    val networkState by useNetworkState(context = LocalContext.current)
+    val networkState by useNetworkState()
     when (networkState) {
         NetworkState.Online -> {
             Toast.makeText(LocalContext.current, "Online", Toast.LENGTH_LONG).show()
