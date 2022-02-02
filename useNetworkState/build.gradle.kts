@@ -6,7 +6,7 @@ plugins {
 
 extra.apply {
     set("PUBLISH_GROUP_ID", "me.nikhilchaudhari")
-    set("PUBLISH_VERSION", "1.0.0-alpha1")
+    set("PUBLISH_VERSION", "1.0.0-alpha2")
     set("PUBLISH_ARTIFACT_ID", "compose-usenetworkstate")
 }
 
