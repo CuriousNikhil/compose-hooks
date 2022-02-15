@@ -1,15 +1,15 @@
-# Hooks for Jetpack Compose 🚧 
+# Hooks for Jetpack Compose
 
 
 A collection small handy, ready-made hooks for Jetpack Compose so that you don't have to think about the states, logic or anything. Just plug it in and use!
 Inspired from react hooks.
 
-~~~ Note
-Documentation is in progress 🧰 🪛 👷‍♂️
-~~~
 
+[`useFetch`](https://github.com/CuriousNikhil/compose-hooks/usefetch) - When you want just to fetch some data and don't want to setup everything unnecessarily!
 
-[`useFetch`](https://github.com/CuriousNikhil/compose-hooks) - A simple hook when you want to fetch some data and don't want to setup everything unnecessarily!
+[`useNetworkState`](https://github.com/CuriousNikhil/compose-hooks/useNetworkState) - When you want to use the network connectivity as a state in Compose!
+
+[`useReducer`](https://github.com/CuriousNikhil/compose-hooks/useReducer) - When you want to make your state updates in Redux style.
 
 
 
