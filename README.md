@@ -88,7 +88,7 @@ For example -
   
 ```
 
-Checkout more examples [here]()
+Checkout more examples [here](https://github.com/CuriousNikhil/compose-hooks/blob/main/app/src/main/java/me/nikhilchaudhari/usefetch/MainActivity.kt) in the sample app. You can go to individual hook repository to know more about those.
 
 ## Want to publish your own compose-hook?
 
