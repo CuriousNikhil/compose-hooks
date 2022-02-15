@@ -1,11 +1,24 @@
 # Hooks for Jetpack Compose
 
 
-A collection small handy, ready-made hooks for Jetpack Compose so that you don't have to think about the states, logic or anything. Just plug it in and use!
-Inspired from react hooks.
 
+A collection of small handy, ready-made hooks for Jetpack Compose so that you don't have to think about the states, logic or anything. Just plug it in and use!
 
-[**`useFetch`**](https://github.com/CuriousNikhil/compose-hooks/usefetch) - when you want just to fetch some data and don't want to setup everything unnecessarily!
+![jc-hooks-small](https://user-images.githubusercontent.com/16976114/154118050-c636a2c5-e5cc-409c-9f3d-40d2b0295524.jpg)
+
+Inspired from [`react hooks`](https://reactjs.org/docs/hooks-intro.html).
+
+## [**`useFetch`**](https://github.com/CuriousNikhil/compose-hooks/usefetch) 
+
+[![](https://img.shields.io/badge/mavencentral-v1.0.0--alpha1.3-yellowgreen?style=flat&logo=gradle)](https://github.com/CuriousNikhil/compose-hooks/usefetch)
+
+Add the following dependency in your `build.gradle`
+
+```kotlin
+  implementation("me.nikhilchaudhari:compose-usefetch:{latest-version}")
+```
+
+When you want just to fetch some data and don't want to setup everything unnecessarily!
 
 For example - 
 
@@ -19,7 +32,17 @@ For example -
  }
 ```
 
-[**`useNetworkState`**](https://github.com/CuriousNikhil/compose-hooks/useNetworkState) - when you want to use the network connectivity as a state in Compose!
+## [**`useNetworkState`**](https://github.com/CuriousNikhil/compose-hooks/useNetworkState) 
+
+[![](https://img.shields.io/badge/mavencentral-v1.0.0--alpha2-yellowgreen?style=flat&logo=gradle)](https://github.com/CuriousNikhil/compose-hooks/useNetworkState)
+
+Add the following dependency in your `build.gradle`
+
+```kotlin
+  implementation("me.nikhilchaudhari:compose-usenetworkstate:{latest-version}")
+```
+
+When you want to use the network connectivity as a state in Compose!
 
 For example -
 
@@ -35,7 +58,17 @@ For example -
 ```
 
 
-[**`useReducer`**](https://github.com/CuriousNikhil/compose-hooks/useReducer) - when you want to make your state updates in Redux style.
+## [**`useReducer`**](https://github.com/CuriousNikhil/compose-hooks/useReducer) 
+
+[![](https://img.shields.io/badge/mavencentral-v1.0.0--alpha1-yellowgreen?style=flat&logo=gradle)](https://github.com/CuriousNikhil/compose-hooks/useReducer)
+
+Add the following dependency in your `build.gradle`
+
+```kotlin
+  implementation("me.nikhilchaudhari:compose-usereducer:{latest-version}")
+```
+
+When you want to make your state updates in Redux style.
 
 For example -
 
