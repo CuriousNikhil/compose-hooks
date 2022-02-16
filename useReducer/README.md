@@ -4,8 +4,9 @@ Do you want to handle a bigger state object? Don't want to clutter the complex s
 Okay, `useReducer` got your back. You can define the the `actions` and state update logic together and `useReducer` will help you to reduce and run your actions 
 when you want to perform them. 
 
-[![](https://img.shields.io/badge/mavencentral-v1.0.0--alpha1-yellowgreen?style=flat&logo=gradle)](https://github.com/CuriousNikhil/compose-hooks/useReducer) | 
-[![javadoc](https://javadoc.io/badge2/me.nikhilchaudhari/compose-usereducer/javadoc.svg)](https://javadoc.io/doc/me.nikhilchaudhari/compose-usereducer) 
+[![useReducer](https://img.shields.io/maven-central/v/me.nikhilchaudhari/compose-usereducer.svg?logo=kotlin)](https://search.maven.org/artifact/me.nikhilchaudhari/compose-usereducer)
+[![javadoc](https://javadoc.io/badge2/me.nikhilchaudhari/compose-usereducer/javadoc.svg)](https://javadoc.io/doc/me.nikhilchaudhari/compose-usereducer)
+
 
 If you are familiar with the Redux, it's pretty much the same.
 
