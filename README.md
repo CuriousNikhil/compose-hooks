@@ -34,7 +34,7 @@ For example -
 
 ## [**`useNetworkState`**](https://github.com/CuriousNikhil/compose-hooks/tree/main/useNetworkState) 
 
-[![](https://img.shields.io/badge/mavencentral-v1.0.0--alpha2-yellowgreen?style=flat&logo=gradle)](https://github.com/CuriousNikhil/compose-hooks/useNetworkState)
+[![](https://img.shields.io/badge/mavencentral-v1.0.0--alpha2.1-yellowgreen?style=flat&logo=gradle)](https://github.com/CuriousNikhil/compose-hooks/useNetworkState)
 
 Add the following dependency in your `build.gradle`
 
