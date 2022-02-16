@@ -93,7 +93,7 @@ Checkout more examples [here](https://github.com/CuriousNikhil/compose-hooks/blo
 ## Want to publish your own compose-hook?
 
 Please feel free to contribute. Create your own hooks.
-Checkout the contribution guide for more.
+Checkout the [contribution guide](https://github.com/CuriousNikhil/compose-hooks/tree/main/compose-hook-template) for more.
 
 ### Reach out to me
 
