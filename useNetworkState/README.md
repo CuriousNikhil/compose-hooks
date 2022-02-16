@@ -3,7 +3,7 @@
 Need to observe the Network availability? Cool, then just `useNetworkState`. This will return a `State` value if the device gets connected/disconnected from network.
 
 
-[![](https://img.shields.io/badge/mavencentral-v1.0.0--alpha2.1-yellowgreen?style=flat&logo=gradle)](https://github.com/CuriousNikhil/compose-hooks/useNetworkState) | 
+[![usenetworkstate](https://img.shields.io/maven-central/v/me.nikhilchaudhari/compose-usenetworkstate.svg?logo=kotlin)](https://search.maven.org/artifact/me.nikhilchaudhari/compose-usenetworkstate) 
 [![javadoc](https://javadoc.io/badge2/me.nikhilchaudhari/compose-usenetworkstate/javadoc.svg)](https://javadoc.io/doc/me.nikhilchaudhari/compose-usenetworkstate)
 
 
