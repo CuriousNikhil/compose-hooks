@@ -10,7 +10,7 @@ Inspired from [`react hooks`](https://reactjs.org/docs/hooks-intro.html).
 
 ## [**`useFetch`**](https://github.com/CuriousNikhil/compose-hooks/tree/main/usefetch) 
 
-[![](https://img.shields.io/badge/mavencentral-v1.0.0--alpha1.3-yellowgreen?style=flat&logo=gradle)](https://github.com/CuriousNikhil/compose-hooks/usefetch)
+[![useFetch](https://img.shields.io/maven-central/v/me.nikhilchaudhari/compose-usefetch.svg?logo=kotlin)](https://search.maven.org/artifact/me.nikhilchaudhari/compose-usefetch)
 
 Add the following dependency in your `build.gradle`
 
@@ -34,7 +34,7 @@ For example -
 
 ## [**`useNetworkState`**](https://github.com/CuriousNikhil/compose-hooks/tree/main/useNetworkState) 
 
-[![](https://img.shields.io/badge/mavencentral-v1.0.0--alpha2.1-yellowgreen?style=flat&logo=gradle)](https://github.com/CuriousNikhil/compose-hooks/useNetworkState)
+[![usenetworkstate](https://img.shields.io/maven-central/v/me.nikhilchaudhari/compose-usenetworkstate.svg?logo=kotlin)](https://search.maven.org/artifact/me.nikhilchaudhari/compose-usenetworkstate)
 
 Add the following dependency in your `build.gradle`
 
@@ -60,7 +60,7 @@ For example -
 
 ## [**`useReducer`**](https://github.com/CuriousNikhil/compose-hooks/tree/main/useReducer) 
 
-[![](https://img.shields.io/badge/mavencentral-v1.0.0--alpha1-yellowgreen?style=flat&logo=gradle)](https://github.com/CuriousNikhil/compose-hooks/useReducer)
+[![useReducer](https://img.shields.io/maven-central/v/me.nikhilchaudhari/compose-usereducer.svg?logo=kotlin)](https://search.maven.org/artifact/me.nikhilchaudhari/compose-usereducer)
 
 Add the following dependency in your `build.gradle`
 
