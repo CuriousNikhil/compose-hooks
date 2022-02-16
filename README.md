@@ -8,7 +8,7 @@ A collection of small handy, ready-made hooks for Jetpack Compose so that you do
 
 Inspired from [`react hooks`](https://reactjs.org/docs/hooks-intro.html).
 
-## [**`useFetch`**](https://github.com/CuriousNikhil/compose-hooks/usefetch) 
+## [**`useFetch`**](https://github.com/CuriousNikhil/compose-hooks/tree/main/usefetch) 
 
 [![](https://img.shields.io/badge/mavencentral-v1.0.0--alpha1.3-yellowgreen?style=flat&logo=gradle)](https://github.com/CuriousNikhil/compose-hooks/usefetch)
 
@@ -32,7 +32,7 @@ For example -
  }
 ```
 
-## [**`useNetworkState`**](https://github.com/CuriousNikhil/compose-hooks/useNetworkState) 
+## [**`useNetworkState`**](https://github.com/CuriousNikhil/compose-hooks/tree/main/useNetworkState) 
 
 [![](https://img.shields.io/badge/mavencentral-v1.0.0--alpha2-yellowgreen?style=flat&logo=gradle)](https://github.com/CuriousNikhil/compose-hooks/useNetworkState)
 
@@ -58,7 +58,7 @@ For example -
 ```
 
 
-## [**`useReducer`**](https://github.com/CuriousNikhil/compose-hooks/useReducer) 
+## [**`useReducer`**](https://github.com/CuriousNikhil/compose-hooks/tree/main/useReducer) 
 
 [![](https://img.shields.io/badge/mavencentral-v1.0.0--alpha1-yellowgreen?style=flat&logo=gradle)](https://github.com/CuriousNikhil/compose-hooks/useReducer)
 
