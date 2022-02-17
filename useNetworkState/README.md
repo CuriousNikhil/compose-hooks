@@ -1,6 +1,6 @@
 # useNetworkState for Jetpack Compose
 
-Need to observe the Network availability? Cool, then just `useNetworkState`. This will return a `State` value if the device gets connected/disconnected from network.
+Need to observe the Network availability? Cool, then just `useNetworkState`. This will return a `State` value and state will change if the device gets connected/disconnected from network.
 
 
 [![usenetworkstate](https://img.shields.io/maven-central/v/me.nikhilchaudhari/compose-usenetworkstate.svg?logo=kotlin)](https://search.maven.org/artifact/me.nikhilchaudhari/compose-usenetworkstate) 
@@ -30,7 +30,7 @@ implementation("me.nikhilchaudhari:compose-usenetworkstate:{latest-version}")
 
 ## Getting started
 
-`useNetworkState` returns a `MutableState`. This state changes the value to `NetworkState.Offline` or `NetworkState.Online` depending on 
+`useNetworkState` returns a `MutableState`. This state value changes to `NetworkState.Offline` or `NetworkState.Online` depending on 
 whether your device is disconnected or connected to network resp.
 
-That's it. Simple hook but useful. 
+That's it. Simple and useful. 
