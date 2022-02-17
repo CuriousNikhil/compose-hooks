@@ -9,9 +9,9 @@ Inspired from react-hooks [useFetch](https://use-http.com/#/)
 [![javadoc](https://javadoc.io/badge2/me.nikhilchaudhari/compose-usefetch/javadoc.svg)](https://javadoc.io/doc/me.nikhilchaudhari/compose-usefetch)
 
 
-~~~
-Before starting to use this `useFetch` hook, I should warn you that please use this only for your simple side-projects or running PoCs etc. useFetch uses produceState{...} side effect internally and since it's a composable, it'll follow the lifecycle and could get triggered on rotation changes, etc. 
-~~~
+
+! Warning !
+> Before starting to use this `useFetch` hook, I should warn you that please use this only for your simple side-projects or running PoCs etc. useFetch uses produceState{...} side effect internally and since it's a composable, it'll follow the lifecycle and could get triggered on rotation changes, etc. 
 
 ## Usage
 
